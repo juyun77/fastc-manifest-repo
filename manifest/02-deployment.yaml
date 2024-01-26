@@ -27,10 +27,3 @@ spec:
             - name: http
               containerPort: 80
               protocol: TCP
-      nodeSelector:
-        nodeType: service-2023
-      tolerations:
-        - key: service
-          operator: "Equal"
-          value: "true"
-          effect: "NoSchedule"
