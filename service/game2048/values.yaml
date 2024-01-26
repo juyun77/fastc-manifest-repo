@@ -6,7 +6,7 @@ appName: "game2048"
 replicaCount: 3
 
 image:
-  repository: 457017831224.dkr.ecr.ap-northeast-2.amazonaws.com/frontend
+  repository: 457017831224.dkr.ecr.ap-northeast-2.amazonaws.com/app-repo
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"
@@ -27,12 +27,12 @@ service:
 ingress:
   annotations:
     kubernetes.io/ingress.class: alb
-    alb.ingress.kubernetes.io/load-balancer-name: fastc-alb
+    alb.ingress.kubernetes.io/load-balancer-name: jykim-alb
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
     alb.ingress.kubernetes.io/healthcheck-path: /
-    alb.ingress.kubernetes.io/subnets: subnet-0f801d5cd56ded4d6, subnet-06e61f4e40cb6f64c
+    alb.ingress.kubernetes.io/subnets: subnet-095ec7ef19cddff47, subnet-03fe4be5ec010a03c
   ingressRule:
     - http:
         paths:
