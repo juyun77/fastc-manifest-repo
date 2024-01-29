@@ -21,9 +21,12 @@ spec:
     spec:
       containers:
         - name: game2048
-          image: "457017831224.dkr.ecr.ap-northeast-2.amazonaws.com/frontend:latest"
+          image: "457017831224.dkr.ecr.ap-northeast-2.amazonaws.com/frontend:${IMAGE_TAG}"
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
               containerPort: 80
               protocol: TCP
+      env:
+        - name: IMAGE_TAG
+          value: "latest"
