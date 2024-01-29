@@ -27,6 +27,6 @@ spec:
             - name: http
               containerPort: 80
               protocol: TCP
-      env:
-        - name: IMAGE_TAG
-          value: "latest"
+          env:
+            - name: IMAGE_TAG
+              value: "latest"
