@@ -1,7 +1,63 @@
-name: frontend-port-80
-image: "457017831224.dkr.ecr.ap-northeast-2.amazonaws.com/testfront:44e8b"
-imagePullPolicy: IfNotPresent
-ports:
-  - name: http
-    containerPort: 80
-    protocol: TCP
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: juyun
+  name: frontend-port-80
+spec:
+  revisionHistoryLimit: 5
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 0%
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: frontend-port-80
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: frontend-port-80
+    spec:
+      containers:
+        - name: frontend-port-80
+          image: "457017831224.dkr.ecr.ap-northeast-2.amazonaws.com/testfront"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: juyun
+  name: backend-port-8080
+spec:
+  revisionHistoryLimit: 5
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 0%
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: backend-port-8080
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: backend-port-8080
+    spec:
+      containers:
+        - name: backend-port-8080
+          image: "457017831224.dkr.ecr.ap-northeast-2.amazonaws.com/backend"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+
+
