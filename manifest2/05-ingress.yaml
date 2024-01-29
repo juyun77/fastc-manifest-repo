@@ -10,7 +10,7 @@ metadata:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
     alb.ingress.kubernetes.io/healthcheck-path: /
-    alb.ingress.kubernetes.io/subnets: subnet-06e61f4e40cb6f64c, subnet-0f801d5cd56ded4d6  # 퍼블릭 서브넷
+    alb.ingress.kubernetes.io/subnets: subnet-095ec7ef19cddff47, subnet-03fe4be5ec010a03c  # 퍼블릭 서브넷
     alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-northeast-2:457017831224:certificate/445450e4-d9ea-47c6-993c-1a12ec5b970b
 spec:
   rules:
