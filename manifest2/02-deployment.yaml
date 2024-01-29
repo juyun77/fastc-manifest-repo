@@ -21,15 +21,13 @@ spec:
     spec:
       containers:
         - name: frontend-port-80
-          image: "194453983284.dkr.ecr.ap-northeast-2.amazonaws.com/test-frontend:latest"
+          image: "457017831224.dkr.ecr.ap-northeast-2.amazonaws.com/testfront:869b4"
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
               containerPort: 80
               protocol: TCP
-
 ---
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -53,10 +51,9 @@ spec:
     spec:
       containers:
         - name: backend-port-8080
-          image: "194453983284.dkr.ecr.ap-northeast-2.amazonaws.com/juyun-backend:latest"
+          image: "457017831224.dkr.ecr.ap-northeast-2.amazonaws.com/testfront:869b4"
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
               containerPort: 8080
               protocol: TCP
-
