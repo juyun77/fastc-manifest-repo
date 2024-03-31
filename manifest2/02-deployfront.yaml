@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: frontend-port-80
-          image: "252340876984.dkr.ecr.ap-northeast-2.amazonaws.com/cooktailfront:17228"
+          image: "252340876984.dkr.ecr.ap-northeast-2.amazonaws.com/cooktailfront:575a0"
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
