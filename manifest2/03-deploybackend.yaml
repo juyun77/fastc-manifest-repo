@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: backend-port-8080
-          image: "457017831224.dkr.ecr.ap-northeast-2.amazonaws.com/backend:latest"
+          image: "252340876984.dkr.ecr.ap-northeast-2.amazonaws.com/cooktailback:latest"
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
